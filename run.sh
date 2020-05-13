@@ -19,8 +19,8 @@ trap stop_running EXIT
 
 exec &>> /var/log/sssd-run.log
 
+systemctl start oddjobd.service
 systemctl start sssd.service
-systemctl start oddjobd
 
 while true ; do sleep 1000 & wait $! ; done
 
